@@ -37,3 +37,13 @@ def parse_resume(pdf_path):
         "education": education,
         "raw_text": text[:500]  # preview
     }
+def parse_resume(uploaded_file):
+    # Existing code...
+    skills = extract_skills(text)  # however you extract them
+    return {
+        "name": name,
+        "email": email,
+        "skills": skills,
+        "education": education,
+        "experience": experience
+    }
