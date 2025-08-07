@@ -1,0 +1,5 @@
+streamlit
+spacy
+pandas
+scikit-learn
+pdfminer.six
