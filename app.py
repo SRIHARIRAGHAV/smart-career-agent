@@ -8,8 +8,11 @@ if uploaded_file is not None:
     # pass the uploaded_file directly (it is file-like)
     parsed = parse_resume(uploaded_file)
     st.subheader("Extracted skills")
+    st.write("Extracted Skills:", extracted_skills)
+    extracted_skills = parsed_data.get("skills", [])
     st.write(parsed["skills"] or "No skills found")
     st.subheader("Education")
     st.write(parsed["education"] or "No education info found")
     st.subheader("Email")
     st.write(parsed["email"] or "No email found")
+
