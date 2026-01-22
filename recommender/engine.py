@@ -1,7 +1,7 @@
 # Recommendation engine logic here
 import json
 
-def load_job_roles(path='smart-career-agent/data/job_roles.json'):
+def load_job_roles(path='smart-career-agent/data/job_title_des.json'):
     with open(path, 'r') as file:
         return json.load(file)
 
