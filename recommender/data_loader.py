@@ -15,8 +15,8 @@ SAMPLE_JSON = [
 
 def _write_sample_files():
     """Create sample JSON and CSV if none exist (safe for dev)."""
-    json_path = DATA_DIR / "job_roles.json"
-    csv_path = DATA_DIR / "job_roles.csv"
+    json_path = DATA_DIR / "job_title_des.json"
+    csv_path = DATA_DIR / "job_title_des.csv"
     if not json_path.exists():
         json_path.write_text(json.dumps(SAMPLE_JSON, indent=2), encoding="utf-8")
     if not csv_path.exists():
@@ -31,7 +31,7 @@ def load_job_roles(json_path: str = None) -> List[Dict[str, Any]]:
     Load job roles from JSON. Path is resolved relative to this file by default.
     """
     if json_path is None:
-        json_path = str(DATA_DIR / "job_roles.json")
+        json_path = str(DATA_DIR / "job_title_des.json")
     file = Path(json_path)
     if not file.exists():
         raise FileNotFoundError(f"JSON file not found at: {file.resolve()}")
@@ -51,7 +51,7 @@ def load_job_roles_csv(csv_path: str = None) -> List[Dict[str, Any]]:
     Skills column can be comma-separated string.
     """
     if csv_path is None:
-        csv_path = str(DATA_DIR / "job_roles.csv")
+        csv_path = str(DATA_DIR / "job_title_des.csv")
     file = Path(csv_path)
     if not file.exists():
         raise FileNotFoundError(f"CSV file not found at: {file.resolve()}")
